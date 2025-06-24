@@ -22,7 +22,7 @@ const Game = () => {
   }, [min, max]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/auth/profile', { withCredentials: true })
+    axios.get('https://guess-game-1-1xl3.onrender.com/api/auth/profile', { withCredentials: true })
       .then(res => setUsername(res.data.username))
       .catch(() => navigate('/login'));
   }, []);
@@ -39,7 +39,7 @@ const Game = () => {
 
   const saveResult = async (won) => {
     try {
-      await axios.post('http://localhost:5000/api/game/save-result', {
+      await axios.post('https://guess-game-1-1xl3.onrender.com/api/game/save-result', {
         attempts,
         won
       }, { withCredentials: true });
@@ -96,7 +96,7 @@ const Game = () => {
   };
 
   const handleLogout = async () => {
-    await axios.post('http://localhost:5000/api/auth/logout', {}, { withCredentials: true });
+    await axios.post('https://guess-game-1-1xl3.onrender.com/api/auth/logout', {}, { withCredentials: true });
     navigate('/login');
   };
 

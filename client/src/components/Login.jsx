@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/login', {
+      await axios.post('https://guess-game-1-1xl3.onrender.com/api/auth/login', {
         username,
         password,
       }, { withCredentials: true });
