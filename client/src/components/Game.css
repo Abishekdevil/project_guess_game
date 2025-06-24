@@ -1,0 +1,37 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.container.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+input, button {
+  margin: 5px;
+  padding: 8px;
+}
+
+.range-inputs {
+  margin: 10px 0;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+input.shake {
+  animation: shake 0.5s;
+  border: 2px solid red;
+}
