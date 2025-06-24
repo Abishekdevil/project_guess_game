@@ -9,11 +9,11 @@ export default function History() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/auth/profile', { withCredentials: true })
+    axios.get('https://guess-game-1-1xl3.onrender.com/api/auth/profile', { withCredentials: true })
       .then(res => setUsername(res.data.username))
       .catch(() => navigate('/login'));
 
-    axios.get('http://localhost:5000/api/game/history', { withCredentials: true })
+    axios.get('https://guess-game-1-1xl3.onrender.com/api/game/history', { withCredentials: true })
       .then(res => setHistory(res.data))
       .catch(() => navigate('/login'));
   }, []);
