@@ -8,7 +8,7 @@ const authRoutes = require('./routes/auth');
 const gameRoutes = require('./routes/game');
 
 const app = express();
-app.use(cors({ origin: 'https://guessgammee.netlify.app/', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
