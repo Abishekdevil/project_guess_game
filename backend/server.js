@@ -6,9 +6,6 @@ require('dotenv').config();
 
 
 const app = express();
-app.use(express.json());
-app.use(cookieParser());
-
 
 const allowedOrigins = [
   "http://localhost:5173",             // dev (Vite)
@@ -19,6 +16,10 @@ app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
+
+app.use(express.json());
+app.use(cookieParser());
+
 
 const authRoutes = require('./routes/auth');
 const gameRoutes = require('./routes/game');
