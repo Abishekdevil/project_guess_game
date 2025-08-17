@@ -8,12 +8,12 @@ require('dotenv').config();
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5173",             // dev (Vite)
+  "http://localhost:5173",           // dev (Vite)
   "http://guessgammeee.netlify.app"   // prod (Netlify)
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: "http://guessgammeee.netlify.app",
   credentials: true
 }));
 

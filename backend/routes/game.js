@@ -3,7 +3,7 @@ const router = express.Router();
 const GameResult = require('../models/GameResult');
 const verifyToken = require('../middleware/verifyToken');
 
-router.post('/save-result', verifyToken, async (req, res) => {
+router.post('/save-result', async (req, res) => {
   const { attempts, won } = req.body;
   const username = req.user.username;
   try {
@@ -14,7 +14,7 @@ router.post('/save-result', verifyToken, async (req, res) => {
   }
 });
 
-router.get('/history', verifyToken, async (req, res) => {
+router.get('/history', async (req, res) => {
   const username = req.user.username;
   try {
     const history = await GameResult.find({ username }).sort({ timestamp: -1 });
