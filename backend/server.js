@@ -4,13 +4,25 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
-const authRoutes = require('./routes/auth');
-const gameRoutes = require('./routes/game');
 
 const app = express();
-app.use(cors({ origin: '*', credentials: true }));
+
+const allowedOrigins = [
+  "http://localhost:5173",             // dev (Vite)
+  "http://guessgammeee.netlify.app"   // prod (Netlify)
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
+
+
+const authRoutes = require('./routes/auth');
+const gameRoutes = require('./routes/game');
 
 mongoose.connect(process.env.uri)
   .then(() => console.log(' MongoDB connected'))
