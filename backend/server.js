@@ -13,7 +13,7 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: "https://guessgammeee.netlify.app",
+  origin: "https://guessgammee.netlify.app",
   credentials: true
 }));
 
