@@ -17,7 +17,7 @@ const Signup = () => {
         username,
         password,
       });
-      navigate('/login');
+      navigate('/');
     } catch (err) {
       setMsg(err.response?.data?.message || 'Signup failed');
     }

@@ -13,11 +13,11 @@ export default function History() {
   useEffect(() => {
     axios.get(`${api}/api/auth/profile`, { withCredentials: true })
       .then(res => setUsername(res.data.username))
-      .catch(() => navigate('/login'));
+      .catch(() => navigate('/'));
 
     axios.get(`${api}/api/game/history`, { withCredentials: true })
       .then(res => setHistory(res.data))
-      .catch(() => navigate('/login'));
+      .catch(() => navigate('/'));
   }, []);
 
   return (

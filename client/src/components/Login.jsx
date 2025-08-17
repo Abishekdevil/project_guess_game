@@ -19,7 +19,7 @@ const Login = () => {
         username,
         password,
       }, { withCredentials: true });
-      navigate('/');
+      navigate('/game');
     } catch (err) {
       setMsg(err.response?.data?.message || 'Login failed');
     }
