@@ -21,12 +21,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-const authRoutes = require('./routes/auth');
-const gameRoutes = require('./routes/game');
+
 
 mongoose.connect(process.env.uri)
   .then(() => console.log(' MongoDB connected'))
   .catch(err => console.error(' MongoDB error', err.message));
+
+const authRoutes = require('./routes/auth');
+const gameRoutes = require('./routes/game');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/game', gameRoutes);
