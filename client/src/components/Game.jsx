@@ -23,12 +23,8 @@ const Game = () => {
     generateRandomNumber();
   }, [min, max]);
 
-  useEffect(() => {
-    axios.get(`${api}/api/auth/profile`, { withCredentials: true })
-      .then(res => setUsername(res.data.username))
-      .catch(() => navigate('/login'));
-  }, []);
-
+  
+  
   const generateRandomNumber = () => {
     const rand = Math.floor(Math.random() * (max - min + 1)) + min;
     setRandomNumber(rand);
