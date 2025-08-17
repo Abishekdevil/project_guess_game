@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
   // ✅ Important for cross-domain cookies
   res.cookie('token', token, {
     httpOnly: true,
-    secure: true,        // must be true in production (HTTPS on Render/Netlify)
+    secure: false,        // must be true in production (HTTPS on Render/Netlify)
     sameSite: 'None',    // required when frontend + backend are on different domains
     maxAge: 2 * 60 * 60 * 1000 // 2h
   });
