@@ -10,9 +10,12 @@ const Login = () => {
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
+  const api = process.env.REACT_APP_API_URL;
+
+
   const handleLogin = async () => {
     try {
-      await axios.post('https://guess-game-1-1xl3.onrender.com/api/auth/login', {
+      await axios.post(`${api}/api/auth/login`, {
         username,
         password,
       }, { withCredentials: true });

@@ -8,12 +8,14 @@ export default function History() {
   const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
+  const api = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    axios.get('https://guess-game-1-1xl3.onrender.com/api/auth/profile', { withCredentials: true })
+    axios.get(`${api}/api/auth/profile`, { withCredentials: true })
       .then(res => setUsername(res.data.username))
       .catch(() => navigate('/login'));
 
-    axios.get('https://guess-game-1-1xl3.onrender.com/api/game/history', { withCredentials: true })
+    axios.get(`${api}/api/game/history`, { withCredentials: true })
       .then(res => setHistory(res.data))
       .catch(() => navigate('/login'));
   }, []);
